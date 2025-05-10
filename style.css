@@ -1,0 +1,305 @@
+/* Variáveis de cores e layout */
+:root {
+    --primary-color:    #102c44; /* Cor principal do layout */
+    --secondary-color:  #102c44; /* Cor secundária (também usada como cor do texto) */
+
+    --white-color:     #FFFFFF;  /* Cor branca */
+
+    --bg: url('../MyResume/img/main-bg.svg'); /* Imagem de fundo da página */
+
+    --padding: 3em; /* Padding padrão (margem interna) */
+}
+
+/* Reset de estilo padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garantir que o padding e a borda não afetem as dimensões do elemento */
+}
+
+/* Estilo da tag body e comportamento da página */
+body {
+    font-family: 'Poppins', sans-serif; /* Definir fonte */
+    transition: background-color 0.3s, color 0.3s; /* Suavizar transição de cores */
+    margin-top: 8em; /* Margem no topo da página */
+}
+
+section {
+  scroll-margin-top: 100px; /* Ajuste no comportamento de rolagem ao clicar nos links do menu */
+}
+
+i {
+  font-size: 1.1em;
+  color: var(--secondary-color); /* Definir cor para os ícones */
+  margin-right: 0.35em;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin: 1em 0;
+    text-transform: uppercase; /* Deixar título em letras maiúsculas */
+    color: var(--primary-color); /* Cor do título */
+}
+
+li {
+    list-style: none; /* Remover marcadores da lista */
+}
+
+a {
+    text-decoration: none; /* Remover sublinhado dos links */
+    color: blue; /* Cor dos links */
+}
+
+dt {
+    font-weight: bold;
+    margin: 0.5em 0;
+}
+
+/* Estilo da Navbar (barra de navegação) */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-color); /* Cor de fundo da navbar */
+  padding: 1em 2em; /* Espaçamento interno */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000; /* Manter a navbar sempre visível */
+}
+
+.nav-links ul {
+  display: flex;
+  gap: 1.5em; /* Espaçamento entre os links do menu */
+}
+
+.nav-links ul li a {
+  color: var(--white-color); /* Cor dos links da navbar */
+  text-decoration: none;
+  font-weight: bold; /* Deixar os links em negrito */
+}
+
+.menu-icon {
+  display: none; /* Esconder ícone de menu no desktop */
+  font-size: 2em;
+  cursor: pointer;
+  color: var(--white-color);
+}
+
+.logo a{
+  font-size: 1.5em;
+  color: var(--white-color); /* Cor da logo */
+  font-weight: bold;
+}
+
+/* Responsivo - para dispositivos móveis */
+#menu-toggle {
+  display: none; /* Esconde a checkbox que controla o menu */
+}
+
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block; /* Exibe o ícone de menu em dispositivos menores */
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--primary-color); /* Fundo do menu suspenso */
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #menu-toggle:checked ~ .nav-links {
+    display: flex; /* Exibe o menu quando a checkbox for marcada */
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    padding: 1em 0;
+  }
+
+  .nav-links ul li {
+    margin: 1em 0; /* Espaçamento entre os links */
+  }
+}
+
+/* Classes de conteúdo */
+
+.profile-pic{
+    width: 10em;
+    height: 10em;
+    margin: 1em auto;
+}
+
+.profile-pic img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; /* Tornar a imagem redonda */
+    border: solid 0.2em var(--primary-color); /* Borda ao redor da imagem */
+    object-fit: cover; /* Cortar imagem para se ajustar ao contêiner */
+}
+
+.name {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+}
+
+.main-bg {
+    background: var(--bg); /* Definir a imagem de fundo */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--padding); /* Adicionar espaçamento interno */
+}
+
+.container {
+    max-width: 900px; /* Definir largura máxima do conteúdo */
+    background-color: var(--white-color); /* Cor de fundo do conteúdo */
+    border-radius: 1em;
+    padding: var(--padding);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    animation: fadeInUp 1s ease-out; /* Animação ao carregar */
+}
+
+.pessoal {
+    color: var(--primary-color);
+    border-bottom: solid 0.1em var(--primary-color); /* Borda inferior */
+    padding-bottom: 1em;
+    text-align: center;
+}
+
+.social ul li{
+    margin: 0.5em 0;
+}
+
+.contact ul li {
+    color: var(--primary-color);
+    margin: 1em 0;
+}
+
+/* Estilo para o tema escuro */
+.dark-mode {
+  --bg: url('../MyResume/img/dark-bg.svg');
+  --white-color: #1A3254;
+  --primary-color: #FFFFFF;
+  --secondary-color: #bbbbbb;
+  color: var(--primary-color); /* Definir cor do texto */
+}
+
+/* Switch de tema */
+.theme-switch {
+  position: fixed;
+  top: 5em;
+  right: 1em;
+  width: 60px;
+  height: 30px;
+  z-index: 1000;
+}
+
+.theme-switch input {
+  opacity: 0; /* Esconder o checkbox */
+  width: 0;
+  height: 0;
+  transition: transform 0.3s ease;
+}
+
+.slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ccc;
+  border-radius: 34px;
+  padding: 0 6px;
+  height: 100%;
+  transition: background-color 0.4s;
+}
+
+.slider i {
+  color: white;
+  font-size: 1em;
+  transition: transform 0.3s ease;
+}
+
+.icon-sun {
+  transform: translateX(-100%); /* Posição inicial do ícone do sol */
+  opacity: 0;
+}
+
+input:checked + .slider {
+  background-color: var(--secondary-color); /* Mudar cor do slider */
+}
+
+input:checked + .slider .icon-moon {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+input:checked + .slider .icon-sun {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Estilo do botão de download */
+.download-section {
+  text-align: center;
+  margin-top: 2em;
+  padding: 2em 0;
+  border-radius: 0 0 1em 1em;
+}
+
+.download-btn {
+  display: inline-block;
+  background-color: var(--primary-color); /* Cor do botão */
+  color: var(--white-color);
+  padding: 1em 2em;
+  border-radius: 0.5em;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.download-btn:hover {
+    background-color: #1a1a1a; /* Cor do botão ao passar o mouse */
+}
+
+.download-btn i {
+  margin-right: 0.5em;
+  color: var(--white-color);
+}
+
+/* Imprimir ajustes (ocultar navbar e theme switch) */
+@media print {
+  .navbar,
+  .theme-switch {
+    display: none !important;
+  }
+
+  body {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+}
+
+/* Animação de fade-in */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px); /* Iniciar fora da tela */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Finalizar no lugar correto */
+  }
+}

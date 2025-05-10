@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="script.js" defer></script>
+    <!-- Link para a folha de estilo CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Fontes para os ícones (bootstrap-icons) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Biblioteca para gerar PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <!-- Ícones para diferentes tamanhos de dispositivos -->
+    <link rel="icon" href="../MyResume/img/icon.ico" type="image/x-icon">
+    <link rel="icon" href="../MyResume/img/icon.ico" sizes="32x32" type="image/png">
+    <link rel="icon" href="../MyResume/img/icon.ico" sizes="16x16" type="image/png">
+    <link rel="apple-touch-icon" href="../MyResume/img/icon.ico">
+    <link rel="manifest" href="../MyResume/img/icon.ico">
+
+    <title>Currículo</title>
+</head>
+
+<!-- Switch de tema (muda entre modo claro e escuro) -->
+<label class="theme-switch">
+    <input type="checkbox" id="toggle-theme">
+    <span class="slider">
+        <i class="bi bi-moon-fill icon-moon"></i>
+        <i class="bi bi-sun-fill icon-sun"></i>
+    </span>
+</label>
+
+<!-- Barra de navegação -->
+<header class="navbar">
+  <div class="logo"> <a href="#" id="logo">Curriculo</a></div>
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="menu-icon"> ☰ </label>
+  <nav class="nav-links">
+    <ul>
+      <!-- Links para as seções dentro do currículo -->
+      <li><a href="#profile-pic">Eu</a></li>
+      <li><a href="#objective">Objetivo</a></li>
+      <li><a href="#experiences">Experiências</a></li>
+    </ul>
+  </nav>
+</header>
+
+<body class="main-bg">
+    <div class="container">
+        <!-- Seção de foto de perfil -->
+        <section id="profile-pic" class="profile-pic">
+            <img src="../MyResume/img/profile-pic.png" alt="foto de perfil">
+        </section>
+
+        <!-- Seção de nome -->
+        <section id="pessoal" class="pessoal">             
+            <h1 class="name">João Silva</h1>
+        </section>
+
+        <!-- Seção Objetivo -->
+        <section id="objective" class="objective">
+            <h2>Objetivo</h2>
+            <p>Sou um desenvolvedor web com interesse em aprender novas tecnologias e desafios no mercado de tecnologia. Busco uma posição em uma empresa dinâmica onde eu possa aplicar minhas habilidades em desenvolvimento frontend e backend, contribuir para projetos inovadores e crescer profissionalmente.</p>
+        </section>
+
+        <!-- Seção Experiência Profissional -->
+        <section id="experiences" class="experiences">
+            <h2>Experiência Profissional</h2>
+            <dl>
+                <dt>Frontend - Tech Innovations Inc. (2022 - Presente)</dt>
+                <dd>- Criação de interfaces dinâmicas e responsivas utilizando React e Vue.js.</dd>
+                <dd>- Trabalhei com integração de APIs RESTful e GraphQL.</dd>
+                <dd>- Otimização de desempenho das páginas para melhorar a experiência do usuário.</dd>
+                <dd>- Colaborei com a equipe de design para garantir a melhor usabilidade.</dd>
+
+                <dt>Estagiário de Desenvolvimento Web - Web Design Solutions (2021 - 2022)</dt>
+                <dd>- Auxiliei na implementação de páginas web usando HTML, CSS e JavaScript.</dd>
+                <dd>- Ajustes e melhorias de sites existentes.</dd>
+                <dd>- Desenvolvimento de funcionalidades interativas para melhorar a experiência do usuário.</dd>
+            </dl>
+        </section>
+
+        <!-- Seção Educação -->
+        <section id="education" class="education">
+            <h2>Educação</h2>
+            <dl>
+                <dt>Bacharel em Engenharia de Software - Universidade Estadual de São Paulo (UNESP) (2018 - 2022)</dt>
+                <dd>- Foco em desenvolvimento web e mobile, banco de dados e metodologias ágeis.</dd>
+                <dd>- Participação ativa em projetos de código aberto e hackathons.</dd>
+            </dl>
+        </section>
+
+        <!-- Seção Habilidades -->
+        <section id="skills" class="skills">
+            <h2>Habilidades</h2>
+            <ul>
+                <li><strong>Frontend:</strong>HTML, CSS, JavaScript, React, Vue.js, Bootstrap</li>
+                <li><strong>Backend:</strong>Node.js, Express, MongoDB, SQL</li>
+                <li><strong>Controle de Versão:</strong>Git, GitHub, Bitbucket</li>
+                <li><strong>Ferramentas:</strong>Visual Studio Code, Webpack, Postman, Jira</li>
+                <li><strong>Idiomas:</strong>Inglês Intermediário, Espanhol Básico</li>
+
+            </ul>
+        </section>
+
+        <!-- Seção Projetos Recentes -->
+        <section id="projects" class="projects">
+            <h2>Projetos Recentes</h2>
+            <ul>
+                <li><strong>Portfolio Online:</strong><a href="https://github.com/seugithub/seuprojeto" target="_blank">GitHub Portfolio</a>- Projeto de portfolio pessoal com tecnologias como HTML, CSS, e JavaScript.</li>
+
+                <li><strong>Aplicativo de Lista de Tarefas:</strong><a href="https://github.com/seugithub/seuprojeto" target="_blank">GitHub Tasks App</a>- Aplicativo de lista de tarefas simples utilizando React e Firebase para armazenar dados.</li>
+                
+            </ul>
+        </section>
+
+        <!-- Seção Social -->
+        <section id="social" class="social">
+            <h2>Social</h2>
+            <ul>
+                <li><strong>GitHub:</strong><a href="https://github.com/seugithub" id="github" target="_blank">João Silva GitHub</a></li>
+
+                <li><strong>LinkedIn:</strong><a href="https://www.linkedin.com/in/seulinkedin" id="linkedin" target="_blank">João Silva LinkedIn</a></li>
+
+                <li><strong>WhatsApp:</strong><a href="https://wa.me/5511999999999" id="whatsapp-link" target="_blank">Iniciar conversa</a></li>
+                
+            </ul>
+        </section>
+
+        <!-- Seção de Contato -->
+        <section id="contact" class="contact">
+            <h2>Contato</h2>
+            <ul>
+                <li><i class="bi bi-envelope"> <a href="mailto:seuemail@gmail.com">seuemail@gmail.com</a></i></li>
+                <li><i class="bi bi-telephone"> <a href="tel:+5511999999999">+55 (11)99999-9999</a></i></li>
+            </ul>
+        </section>
+
+        <!-- Seção de Download do PDF -->
+        <footer class="download-section">
+            <button id="download-pdf" class="download-btn">
+                <i class="bi bi-download"> Baixar Currículo em PDF </i>
+            </button>
+        </footer>
+    </div>
+</body>
+</html>
